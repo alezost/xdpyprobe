@@ -1,0 +1,48 @@
+* About
+
+The only purpose of =xdpyprobe= program is to probe the X server for
+connectivity.  The idea of this program came from [[http://stackoverflow.com/questions/637005/x-server-running][this SO question]].
+
+The result of probing can be obtained either from an output or from the
+exit status (0 - connection is possible, 1 - it is not).  The output may
+be suppressed with =--quiet= option.
+
+* Examples
+
+#+BEGIN_SRC sh
+$ xdpyprobe
+DISPLAY ':0' is available?  yes
+#+END_SRC
+
+#+BEGIN_SRC sh
+$ xdpyprobe :3
+DISPLAY ':3' is available?  no
+#+END_SRC
+
+#+BEGIN_SRC sh
+$ DISPLAY=:2 xdpyprobe -q ; echo $?
+1
+#+END_SRC
+
+#+BEGIN_SRC sh
+$ xdpyprobe -h
+... <some useful info> ...
+#+END_SRC
+
+* Building from Git
+
+Requirements for building from git:
+
+- [[http://gnu.org/software/autoconf/][GNU Autoconf]]
+- [[http://gnu.org/software/automake/][GNU Automake]]
+- [[http://gnu.org/software/help2man/][GNU Help2man]]
+
+Run =./autogen.sh= to generate the build system infrastructure.  After
+that, the program can be built and installed with the usual sequence of
+commands of the GNU Build System:
+
+#+BEGIN_SRC sh
+./configure
+make
+make install
+#+END_SRC
