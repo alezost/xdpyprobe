@@ -46,3 +46,11 @@ commands of the GNU Build System:
 make
 make install
 #+END_SRC
+
+* Building with Guix
+
+This repository contains =guix.scm= file which can be used to build the
+development version of this package with [[http://www.gnu.org/software/guix/][GNU Guix]].
+
+A Guix package for the latest release can be found in my [[https://github.com/alezost/guix-config/blob/master/packages/x.scm][guix-config]]
+repository.
